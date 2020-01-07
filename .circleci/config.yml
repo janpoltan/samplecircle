@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    branches:
+    docker:
+      - image: circleci/node:12.5
+    working_directory: ~/temp
+
+    steps:
+      - checkout
+      - run:
+          name: Installing npm
+          command: npm i
+      - run:
+          name: Run code
+          command: node index.js
+
+
